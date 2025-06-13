@@ -1,5 +1,5 @@
 import pandas as pd 
-from .data_ingestion import logger
+from data_ingestion import logger
 
 
 

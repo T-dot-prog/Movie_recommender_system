@@ -1,5 +1,5 @@
 data_preprocessing:
-  strategy: "mean" 
+  strategy: 0 
   thresh: 10  
 
 feature_engineering:
