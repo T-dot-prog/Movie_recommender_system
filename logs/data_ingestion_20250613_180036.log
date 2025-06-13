@@ -1,0 +1,4 @@
+2025-06-13 18:00:36,891 - INFO - Loading data from: D:/cloned_website/data/features/movie_correlations.csv
+2025-06-13 18:00:39,053 - INFO - Successfully loaded data from D:/cloned_website/data/features/movie_correlations.csv
+2025-06-13 18:00:39,053 - INFO - Getting recommendations for movie: The Matrix (1999) with rating: 5
+2025-06-13 18:00:39,057 - ERROR - Error generating recommendations: 'The Matrix (1999)'

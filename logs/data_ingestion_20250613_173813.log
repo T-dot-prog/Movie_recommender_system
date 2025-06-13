@@ -1,0 +1,2 @@
+2025-06-13 17:38:13,025 - INFO - Getting recommendations for movie: 'burbs, The (1989) with rating: 4
+2025-06-13 17:38:13,025 - ERROR - Error generating recommendations: string indices must be integers, not 'str'

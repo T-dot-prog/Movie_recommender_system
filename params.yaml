@@ -1,0 +1,6 @@
+data_preprocessing:
+  strategy: "mean" 
+  thresh: 10  
+
+feature_engineering:
+  method:  "pearson"
