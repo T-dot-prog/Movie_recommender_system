@@ -1,2 +1,52 @@
+# Data directories
 /data/
+/data/raw/
+/data/processed/
+/data/features/
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.pkl
+*.h5
+
+# Logs
 /logs/
+*.log
+*.logs
+log.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store

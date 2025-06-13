@@ -1,8 +1,0 @@
-2025-06-13 17:29:31,418 - INFO - Starting feature engineering process
-2025-06-13 17:29:31,419 - INFO - Loading data from: data/processed/user_movie_matrix.csv
-2025-06-13 17:29:31,837 - INFO - Successfully loaded data from data/processed/user_movie_matrix.csv
-2025-06-13 17:29:31,837 - INFO - Calculating movie correlations
-2025-06-13 17:29:31,837 - INFO - Calculating Pearson correlation between movies
-2025-06-13 17:29:43,215 - INFO - Successfully calculated correlation matrix
-2025-06-13 17:29:53,855 - INFO - Successfully saved correlation matrix to data/features/movie_correlations.csv
-2025-06-13 17:29:53,856 - INFO - Feature engineering process completed
