@@ -66,8 +66,8 @@ stages:
       nfiles: 1
     - path: src/prediction.py
       hash: md5
-      md5: 640d61d98c97dc221217f9bd9af18335
-      size: 2805
+      md5: 3a3247b75d046d4fe8558ade44de76de
+      size: 3210
     outs:
     - path: data/output
       hash: md5

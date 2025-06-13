@@ -3,7 +3,7 @@ stages:
     cmd: python src/data_ingestion.py
     deps:
     - src/data_ingestion.py
-   
+
     outs:
     - data/raw
   data_preprocessing:
@@ -33,7 +33,7 @@ stages:
     outs:
     - data/output
 
-params:
-- dvclive/params.yaml
-metrics:
-- dvclive/metrics.json
+artifacts:
+  recommendations_Shrek_2001:
+    path: data/output/recommendations_Shrek_2001.csv
+    type: output

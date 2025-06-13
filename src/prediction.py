@@ -1,6 +1,8 @@
 import pandas as pd 
 import os
 from data_ingestion import logger
+from dvclive import Live
+import yaml
 
 def get_recommendations(df: pd.DataFrame, movie_name: str, movie_rating: int) -> pd.Series:
     """
@@ -52,10 +54,22 @@ def save_recommendations(recommendations: pd.Series, movie_name: str):
         recommendations.to_csv(filename)
         logger.info(f"Successfully saved recommendations to {filename}")
         
+        # Log the output file using dvclive
+        with Live() as live:
+            live.log_artifact(filename, type="output")
+        
     except Exception as e:
         logger.error(f"Error saving recommendations: {str(e)}")
 
 if __name__ == "__main__":
+    # Load parameters
+    with open("params.yaml", "r") as f:
+        params = yaml.safe_load(f)
+    
+    # Log parameters using dvclive
+    with Live(save_dvc_exp= True) as live:
+        live.log_params(params)
+    
     # Load the correlation matrix
     correlation_df = pd.read_csv("data/features/movie_correlations.csv", index_col=0)
     
