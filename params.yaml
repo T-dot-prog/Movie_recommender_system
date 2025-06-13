@@ -1,6 +1,6 @@
 data_preprocessing:
   strategy: 0 
-  thresh: 10  
+  thresh: 20
 
 feature_engineering:
-  method:  "pearson"
+  method:  'spearman'

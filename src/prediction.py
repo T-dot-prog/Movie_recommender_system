@@ -1,7 +1,6 @@
 import pandas as pd 
+import os
 from data_ingestion import logger
-
-
 
 def get_recommendations(df: pd.DataFrame, movie_name: str, movie_rating: int) -> pd.Series:
     """
@@ -34,20 +33,42 @@ def get_recommendations(df: pd.DataFrame, movie_name: str, movie_rating: int) ->
         logger.error(f"Error generating recommendations: {str(e)}")
         return pd.Series()
 
+def save_recommendations(recommendations: pd.Series, movie_name: str):
+    """
+    Save movie recommendations to a CSV file.
+    
+    Args:
+        recommendations (pd.Series): Series of movie recommendations
+        movie_name (str): Name of the movie recommendations are based on
+    """
+    try:
+        # Create output directory if it doesn't exist
+        os.makedirs('data/output', exist_ok=True)
+        
+        # Create filename based on movie name
+        filename = f"data/output/recommendations_{movie_name.replace(' ', '_').replace('(', '').replace(')', '')}.csv"
+        
+        # Save recommendations to CSV
+        recommendations.to_csv(filename)
+        logger.info(f"Successfully saved recommendations to {filename}")
+        
+    except Exception as e:
+        logger.error(f"Error saving recommendations: {str(e)}")
 
-# Test the function
 if __name__ == "__main__":
     # Load the correlation matrix
-    correlation_df = pd.read_csv("D:/cloned_website/data/features/movie_correlations.csv", index_col=0)
+    correlation_df = pd.read_csv("data/features/movie_correlations.csv", index_col=0)
     
     # Test the recommendations for The Matrix
+    movie_name = "Shrek (2001)"
     recommendations = get_recommendations(
         df=correlation_df,
-        movie_name="Matrix, The (1999)",
+        movie_name=movie_name,
         movie_rating=5  # Assuming a high rating since it's a classic
     )
     
+    # Save recommendations to file
+    save_recommendations(recommendations, movie_name)
+    
     print("\nTop 10 Movie Recommendations for The Matrix:")
     print(recommendations)
-
-
